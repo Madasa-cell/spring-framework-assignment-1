@@ -5,4 +5,12 @@
 
 	<!-- add your bean definitions here! -->
 	<bean id="mockCustomerManagementService" class="com.yrgo.services.customers.CustomerManagementMockImpl"/>
+
+	<bean id="mockDiaryManagementService" class="com.yrgo.services.diary.DiaryManagementServiceMockImpl" />
+
+
+	<bean id="callHandlingService" class="com.yrgo.services.calls.CallHandlingServiceImpl">
+		<constructor-arg ref="mockCustomerManagementService"/>
+		<constructor-arg ref="mockDiaryManagementService"/>
+	</bean>
 </beans>
