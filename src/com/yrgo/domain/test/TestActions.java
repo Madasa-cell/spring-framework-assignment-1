@@ -26,7 +26,7 @@ public class TestActions{
 	@Test
 	public void pastActionsAreOverdue(){
 		// This is Feb 01 in 1980 AD.
-		GregorianCalendar requiredBy = new GregorianCalendar(1980, 1, 1, 1, 1, 1);
+		GregorianCalendar requiredBy = new GregorianCalendar(1980, Calendar.JANUARY, 1, 1, 1, 1);
 
 		Action testAction = new Action("A Test Action", requiredBy, null);
 
