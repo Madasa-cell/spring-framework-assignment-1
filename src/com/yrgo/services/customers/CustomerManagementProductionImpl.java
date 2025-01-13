@@ -83,7 +83,8 @@ public class CustomerManagementProductionImpl implements CustomerManagementServi
         }
     }
 
-    public void setCustomerDao(CustomerDaoJdbcTemplateImpl customerDao) {
+    // Assignment 4: Changed CustomerDaoJdbcTemplateImpl customerDao for CustomerDao customerDao
+    public void setCustomerDao(CustomerDao customerDao) {
         this.customerDao = customerDao;
     }
 }
