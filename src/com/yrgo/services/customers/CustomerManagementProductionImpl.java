@@ -6,10 +6,12 @@ import com.yrgo.dataaccess.RecordNotFoundException;
 import com.yrgo.domain.Call;
 import com.yrgo.domain.Customer;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.HashMap;
 import java.util.List;
 
+@Transactional
 public class CustomerManagementProductionImpl implements CustomerManagementService {
     private HashMap<String, Customer> customerMap;
 

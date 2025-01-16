@@ -7,7 +7,9 @@ import java.util.stream.Collectors;
 
 import com.yrgo.domain.Call;
 import com.yrgo.domain.Customer;
+import org.springframework.transaction.annotation.Transactional;
 
+@Transactional
 public class CustomerManagementMockImpl implements CustomerManagementService {
 	private HashMap<String,Customer> customerMap;
 
