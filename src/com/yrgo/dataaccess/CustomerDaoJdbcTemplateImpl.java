@@ -2,14 +2,17 @@ package com.yrgo.dataaccess;
 
 import com.yrgo.domain.Call;
 import com.yrgo.domain.Customer;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
+import org.springframework.stereotype.Repository;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Timestamp;
 import java.util.List;
 
+@Repository
 public class CustomerDaoJdbcTemplateImpl implements CustomerDao {
     //SQL Strings
     private static final String DELETE_SQL = "delete from CUSTOMER where CUSTOMER_ID=?";
@@ -21,9 +24,9 @@ public class CustomerDaoJdbcTemplateImpl implements CustomerDao {
     private static final String GET_FULL_CUSTOMER_DETAILS = "select * from CUSTOMER_CALL where CUSTOMER_ID=?";
     private static final String ADD_CALL_SQL = "insert into CUSTOMER_CALL (CUSTOMER_ID, NOTES, CALL_DATE) values (?, ?, ?)";
 
-
     private JdbcTemplate jdbcTemplate;
 
+    @Autowired
     public CustomerDaoJdbcTemplateImpl(JdbcTemplate jdbcTemplate) {
         this.jdbcTemplate = jdbcTemplate;
         dropTables();

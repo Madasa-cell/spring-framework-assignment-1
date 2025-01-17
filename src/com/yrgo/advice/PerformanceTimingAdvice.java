@@ -1,11 +1,14 @@
 package com.yrgo.advice;
 
 import org.aspectj.lang.ProceedingJoinPoint;
+import org.springframework.stereotype.Component;
 
 /*
     AspectJ pointcut syntax
     AOP namespace
  */
+
+@Component("performanceTimingAdvice")
 public class PerformanceTimingAdvice {
     public Object performTimingMeasurement(ProceedingJoinPoint method) throws Throwable {
         long startTime = System.nanoTime();
